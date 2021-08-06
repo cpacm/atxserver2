@@ -8,7 +8,7 @@ from .views.base import make_redirect_handler
 from .views.device import (AndroidDeviceControlHandler, APIDeviceHandler,
                            APIDeviceListHandler, APIDevicePropertiesHandler,
                            APIUserDeviceActiveHandler, APIUserDeviceHandler,
-                           AppleDeviceListHandler, DeviceChangesWSHandler,
+                           AppleDeviceListHandler, DeviceChangesWSHandler,APIDeviceHookHandler,
                            DeviceItemHandler, DeviceListHandler)
 from .views.group import (APIGroupUserListHandler, APIUserGroupListHandler,
                           UserGroupCreateHandler)
@@ -45,6 +45,7 @@ urlpatterns = [
     (r"/api/v1/user/devices", APIUserDeviceHandler), # GET, POST, DELETE
     (r"/api/v1/user/devices/([^/]+)", APIUserDeviceHandler), # GET
     (r"/api/v1/user/devices/([^/]+)/active", APIUserDeviceActiveHandler), # GET
+    (r"/api/v1/user/devices/([^/]+)/sdkHook", APIDeviceHookHandler),  # POST
     (r"/api/v1/user/settings", APIUserSettingsHandler), # GET, PUT
     (r"/api/v1/admins", APIAdminListHandler), # GET, POST
     ## Group API

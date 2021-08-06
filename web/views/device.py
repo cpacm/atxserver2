@@ -21,6 +21,7 @@ from ..libs import jsondate
 from ..version import __version__
 from .base import (AuthRequestHandler, BaseRequestHandler,
                    BaseWebSocketHandler, CorsMixin)
+from .frida.growingio import frida_hook
 
 
 class AcquireError(Exception):
@@ -84,7 +85,7 @@ class APIUserDeviceActiveHandler(AuthRequestHandler):
             "using": True,
             "udid": udid,
             "userId": self.current_user.email
-        }).update({"lastActivatedAt": time_now()}) # yapf: disable
+        }).update({"lastActivatedAt": time_now()})  # yapf: disable
         if ret['replaced']:
             self.write_json({
                 "success": True,
@@ -117,6 +118,18 @@ def catch_error_wraps(*errors):
         return inner
 
     return decorator
+
+
+class APIDeviceHookHandler(CorsMixin, BaseRequestHandler):
+    @catch_error_wraps(rdb.errors.ReqlNonExistenceError)
+    async def post(self, udid):
+        if not self.current_user.admin:
+            raise RuntimeError("Update property requires admin")
+
+        props = self.get_payload()
+        packageName = props['packageName']
+        await frida_hook(packageName)
+        self.write_json({"success": True, "description": "Sdk Hooked"})
 
 
 class APIDeviceHandler(CorsMixin, BaseRequestHandler):
@@ -180,7 +193,7 @@ class APIUserDeviceHandler(CorsMixin, AuthRequestHandler):
             self.write_json({
                 "success": False,
                 "description": "you have to acquire it before access device info",
-            }) # yapf: disable
+            })  # yapf: disable
             return
 
         # Find the highest priority source
@@ -467,13 +480,13 @@ class D(object):
             "userId": None,
             "colding": True,
             "usingDuration": r.row["usingDuration"].default(0).add(r.now().sub(r.row["usingBeganAt"]))
-        }) # yapf: disable
+        })  # yapf: disable
 
         # 设备先要冷却一下(Provider清理并检查设备)
         source = device2source(device)
         if not source:  # 设备离线了
             return
-        
+
         async def cold_device():
             from tornado.httpclient import HTTPError
             from tornado.httpclient import AsyncHTTPClient, HTTPRequest
@@ -482,7 +495,7 @@ class D(object):
             if not source.get('url'):
                 await self.update({"colding": False})
                 return
-            
+
             source_id = source.get("id")
             from .provider import ProviderHeartbeatWSHandler
             await ProviderHeartbeatWSHandler.release(source_id, device['udid'])

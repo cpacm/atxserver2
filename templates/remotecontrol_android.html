@@ -84,8 +84,8 @@
   .xterm-wrapper {
     line-height: 1.2;
     font-size: 12px;
-    font-family: 'Courier New', Courier, monospace;
-    height: 30em;
+    font-family: 'Courier New', Courier, monospace ;
+    height: 50em;
   }
 
   .terminal {
@@ -332,6 +332,9 @@
           <div>
             <strong>常用命令</strong>
             <ul>
+              <li>过滤SDK日志
+                <term-snippet :term="term" command="logcat | grep Track" />
+              </li>
               <li>查看IP地址
                 <term-snippet :term="term" command="ifconfig | grep Mask" />
               </li>
@@ -375,6 +378,12 @@
           </div>
           <button class="btn btn-outline-primary btn-sm" @click="appInstall"
             :disabled="!app.finished || !app.installUrl">安裝</button>
+          <div class="form-group">
+          <label
+            @dblclick='app.packageName'>包名</label>
+          <input type="text" class="form-control form-control-sm" placeholder="com..." v-model="app.packageName">
+           <button class="btn btn-outline-primary btn-sm" @click="sdkHook(app.packageName)">注入SDK</button>
+          </div>
           <p>
             <pre v-show="!!app.message" v-text="app.message"></pre>
             <small><code v-text="app.packageName"></code></small>
@@ -544,6 +553,19 @@
               }
             }).always(() => {
               this.app.finished = true
+            })
+          },
+          sdkHook(packageName) {
+            $.ajax({
+              method: "post",
+              url: "/api/v1/user/devices/"+ this.udid + "/sdkHook",
+              dataType: "json",
+              data: JSON.stringify({
+                "packageName": packageName,
+              })
+            }).then(ret =>{
+                console.log("准备注入：" + packageName);
+                this.term.emit("data", "logcat | grep Track" + "\n");
             })
           },
           appLaunch(packageName) {
@@ -765,7 +787,8 @@
             ws.binaryType = "arraybuffer"
 
             function ab2str(buf) {
-              return String.fromCharCode.apply(null, new Uint8Array(buf));
+              //console.log("这是原始解析数据："+String.fromCharCode.apply(null, new Uint8Array(buf)))
+              return new TextDecoder().decode(buf);
             }
 
             ws.onopen = (evt) => {
@@ -775,6 +798,7 @@
                 cursorBlink: true
               })
               term.on('data', data => {
+                console.log("这是原始数据："+new TextEncoder().encode("\x00" + data))
                 ws.send(new TextEncoder().encode("\x00" + data))
               })
 
