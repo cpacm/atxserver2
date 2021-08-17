@@ -30,8 +30,6 @@ async def frida_hook(package):
     # device.resume(pid)
     time.sleep(1)
     session = device.attach(pid)
-    with open("README.md") as f2:
-        print("open file")
     with open("static/growingio_sdk.js") as f:
         script = session.create_script(f.read())
     script.on("message", click_handler)
