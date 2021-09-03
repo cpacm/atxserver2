@@ -219,6 +219,30 @@
                   <i class="el-icon-setting"></i>
                   设置
                 </el-button>
+                <el-button round size="small" @click="appOpen('com.apple.mobilesafari')">
+                  <i class="el-icon-setting"></i>
+                  打开Safari
+                </el-button>
+                <el-button round size="small" @click="appOpen('com.apple.AppStore')">
+                  <i class="el-icon-setting"></i>
+                  打开AppStore
+                </el-button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <i class="fas fa-bolt"></i> 注入SDK到App
+              </div>
+              <div class="card-body">
+                <div class="form-group">
+                  <label>输入你的包名</label>
+                  <input type="text" placeholder="eg:com.growingio.demo" v-model="app.bundleId" class="form-control form-control-sm">
+                </div>
+                <el-button @click="appDump" :loading="!app.dumpFinished" :disabled="!app.dumpFinished || !app.bundleId"
+                           size="small">注入</el-button>
+                <hr v-if="!!app.dumpMessage">
+                <pre style="white-space: normal" v-text="app.dumpMessage"></pre>
               </div>
             </div>
 
@@ -325,6 +349,9 @@
           app: {
             message: "",
             finished: true,
+            dumpFinished: true,
+            dumpMessage: "",
+            bundleId: "",
           },
           pageHidden: false,
           imagePool: new ImagePool(100),
@@ -440,7 +467,48 @@
               return
             }
             this.app.url = resp.data.url;
+            print("this.app.url " + this.app.url)
             return this.appInstall()
+          },
+          appDump() {
+            const bundleId = this.app.bundleId;
+            this.app.dumpFinished = false
+            this.app.dumpMessage = "正在打开App中..."
+            $.ajax({
+              method: "post",
+              url: this.path2url("/session"),
+              data: JSON.stringify({
+                capabilities: {
+                  alwaysMatch: {
+                    bundleId: bundleId,
+                    shouldWaitForQuiescence: true,
+                  }
+                }
+              })
+            }).then(ret => {
+              this.session.id = ret.sessionId
+              $.ajax({
+                method: "post",
+                url: "/api/v1/user/devices/"+ this.udid + "/iosInject",
+                dataType: "json",
+                data: JSON.stringify({
+                  "bundleId": bundleId,
+                })
+              }).then(ret =>{
+                console.log("description" + ret["description"])
+                this.app.url = "http://localhost:4000/uploads/inject/Target.ipa"
+                console.log("正在生成App：" + bundleId);
+                this.app.dumpMessage = "正在生成App：" + bundleId + "（将会生成一个重复且同名App，请留意手机界面）";
+              }).done(ret => {
+                console.log("注入成功，请点击右侧安装app");
+                this.app.dumpMessage = "注入成功，请点击右侧安装app"
+                this.app.dumpFinished = true;
+              })
+            }).fail(err => {
+              console.log("打开失败 " + err.responseJSON.description);
+              this.app.dumpMessage = "打开失败 " + err.responseJSON.description;
+              this.app.dumpFinished = false;
+            })
           },
           appInstall() {
             const url = this.app.url
@@ -562,6 +630,7 @@
             console.log(tab.name)
           },
           path2url(pathname) {
+            console.log("path2url " + this.source.wdaUrl + pathname);
             return this.source.wdaUrl + pathname
           },
           disableTouch() {

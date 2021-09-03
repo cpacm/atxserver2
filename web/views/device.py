@@ -22,7 +22,7 @@ from ..version import __version__
 from .base import (AuthRequestHandler, BaseRequestHandler,
                    BaseWebSocketHandler, CorsMixin)
 from .frida.growingio import frida_hook
-
+from .ios.growingio import ios_inject
 
 class AcquireError(Exception):
     pass
@@ -130,6 +130,17 @@ class APIDeviceHookHandler(CorsMixin, BaseRequestHandler):
         packageName = props['packageName']
         await frida_hook(packageName)
         self.write_json({"success": True, "description": "Sdk Hooked"})
+
+class APIDeviceIOSInjectHandler(CorsMixin, BaseRequestHandler):
+    @catch_error_wraps(rdb.errors.ReqlNonExistenceError)
+    async def post(self, udid):
+        if not self.current_user.admin:
+            raise RuntimeError("Update property requires admin")
+
+        props = self.get_payload()
+        bundleId = props['bundleId']
+        await ios_inject(bundleId,udid)
+        self.write_json({"success": True, "description": "SDK injected"})
 
 
 class APIDeviceHandler(CorsMixin, BaseRequestHandler):
