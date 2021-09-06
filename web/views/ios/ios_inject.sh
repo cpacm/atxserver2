@@ -17,7 +17,7 @@ cd ${FRIDA_DIR}
 
 APP_NAME=`frida-ps -Ua  | grep $1 | awk '{print $2}' `
 
-MONKEY_DIR="${ROOT_DIR}/PlayTheApp/"
+MONKEY_DIR="${ROOT_DIR}/PlayTheApp"
 TARGET_DIR="${ROOT_DIR}/PlayTheApp/PlayTheApp/TargetApp"
 
 find . -name "*.ipa"  | xargs rm -f
@@ -54,12 +54,12 @@ mkdir "$CREATEIPA_DIR/Payload"
 cp -rf "$CREATEIPA_DIR/$TARGET.app" "$CREATEIPA_DIR/Payload"
 rm "$CREATEIPA_DIR/Payload"
 zip -qr Target.ipa Payload
-
+# Target.ipa is static value
 echo "$CREATEIPA_DIR/Target.ipa"
 
 INJECT_DIR=$ROOT_DIR/../../../uploads/inject
 mkdir $INJECT_DIR
-rm "$INJECT_DIR/$TARGET.ipa"
-cp -rf "$CREATEIPA_DIR/$TARGET.ipa" "$INJECT_DIR/$TARGET.ipa"
+rm "$INJECT_DIR/Target.ipa"
+cp -rf "$CREATEIPA_DIR/Target.ipa" "$INJECT_DIR/Target.ipa"
 
 exit 0

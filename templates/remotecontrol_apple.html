@@ -487,6 +487,7 @@
               })
             }).then(ret => {
               this.session.id = ret.sessionId
+              this.app.dumpMessage = "正在注入SDK,此过程需要3-5分钟，请耐心等待";
               $.ajax({
                 method: "post",
                 url: "/api/v1/user/devices/"+ this.udid + "/iosInject",
@@ -498,10 +499,9 @@
                 console.log("description" + ret["description"])
                 this.app.url = "http://localhost:4000/uploads/inject/Target.ipa"
                 console.log("正在生成App：" + bundleId);
-                this.app.dumpMessage = "正在生成App：" + bundleId + "（将会生成一个重复且同名App，请留意手机界面）";
               }).done(ret => {
                 console.log("注入成功，请点击右侧安装app");
-                this.app.dumpMessage = "注入成功，请点击右侧安装app"
+                this.app.dumpMessage = "注入成功，请于右侧\"安装管理\"安装App"
                 this.app.dumpFinished = true;
               })
             }).fail(err => {
