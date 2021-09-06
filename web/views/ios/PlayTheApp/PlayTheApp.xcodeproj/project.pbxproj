@@ -1,0 +1,881 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		043CD3B92621D79B000B514B /* MDConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 043CD3B82621D79B000B514B /* MDConfig.plist */; };
+		043CD3C32621D79B000B514B /* libPlayTheAppDylib.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 043CD3C22621D79B000B514B /* libPlayTheAppDylib.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		043CD3C82621D79B000B514B /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043CD3C72621D79B000B514B /* JavaScriptCore.framework */; };
+		043CD3CA2621D79B000B514B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043CD3C92621D79B000B514B /* Foundation.framework */; };
+		043CD3CC2621D79B000B514B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043CD3CB2621D79B000B514B /* UIKit.framework */; };
+		043CD3D12621D79B000B514B /* PlayTheAppDylib.mm in Sources */ = {isa = PBXBuildFile; fileRef = 043CD3D02621D79B000B514B /* PlayTheAppDylib.mm */; };
+		043CD3D42621D79B000B514B /* MDConfigManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 043CD3D32621D79B000B514B /* MDConfigManager.h */; };
+		043CD3D62621D79B000B514B /* MDConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 043CD3D52621D79B000B514B /* MDConfigManager.m */; };
+		043CD3D82621D79B000B514B /* MDCycriptManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 043CD3D72621D79B000B514B /* MDCycriptManager.h */; };
+		043CD3DA2621D79B000B514B /* MDCycriptManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 043CD3D92621D79B000B514B /* MDCycriptManager.m */; };
+		043CD3DC2621D79B000B514B /* MDMethodTrace.h in Headers */ = {isa = PBXBuildFile; fileRef = 043CD3DB2621D79B000B514B /* MDMethodTrace.h */; };
+		043CD3DE2621D79B000B514B /* MDMethodTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = 043CD3DD2621D79B000B514B /* MDMethodTrace.m */; };
+		043CD3E12621D79B000B514B /* a1a2-selectortramps-arm.s in Sources */ = {isa = PBXBuildFile; fileRef = 043CD3E02621D79B000B514B /* a1a2-selectortramps-arm.s */; };
+		043CD3E32621D79B000B514B /* a1a2-selectortramps-arm64.s in Sources */ = {isa = PBXBuildFile; fileRef = 043CD3E22621D79B000B514B /* a1a2-selectortramps-arm64.s */; };
+		043CD3E52621D79B000B514B /* a1a2-selectortramps-i386.s in Sources */ = {isa = PBXBuildFile; fileRef = 043CD3E42621D79B000B514B /* a1a2-selectortramps-i386.s */; };
+		043CD3E72621D79B000B514B /* a1a2-selectortramps-x86_64.s in Sources */ = {isa = PBXBuildFile; fileRef = 043CD3E62621D79B000B514B /* a1a2-selectortramps-x86_64.s */; };
+		043CD3E92621D79B000B514B /* a2a3-selectortramps-arm.s in Sources */ = {isa = PBXBuildFile; fileRef = 043CD3E82621D79B000B514B /* a2a3-selectortramps-arm.s */; };
+		043CD3EB2621D79B000B514B /* a2a3-selectortramps-i386.s in Sources */ = {isa = PBXBuildFile; fileRef = 043CD3EA2621D79B000B514B /* a2a3-selectortramps-i386.s */; };
+		043CD3ED2621D79B000B514B /* a2a3-selectortramps-x86_64.s in Sources */ = {isa = PBXBuildFile; fileRef = 043CD3EC2621D79B000B514B /* a2a3-selectortramps-x86_64.s */; };
+		043CD3EF2621D79B000B514B /* OCMethodTrace.h in Headers */ = {isa = PBXBuildFile; fileRef = 043CD3EE2621D79B000B514B /* OCMethodTrace.h */; };
+		043CD3F12621D79B000B514B /* OCMethodTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = 043CD3F02621D79B000B514B /* OCMethodTrace.m */; };
+		043CD3F32621D79B000B514B /* OCSelectorTrampolines.h in Headers */ = {isa = PBXBuildFile; fileRef = 043CD3F22621D79B000B514B /* OCSelectorTrampolines.h */; };
+		043CD3F52621D79B000B514B /* OCSelectorTrampolines.mm in Sources */ = {isa = PBXBuildFile; fileRef = 043CD3F42621D79B000B514B /* OCSelectorTrampolines.mm */; };
+		043CD3F92621D79B000B514B /* LLDBTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 043CD3F82621D79B000B514B /* LLDBTools.h */; };
+		043CD3FB2621D79B000B514B /* LLDBTools.mm in Sources */ = {isa = PBXBuildFile; fileRef = 043CD3FA2621D79B000B514B /* LLDBTools.mm */; };
+		043CD4002621D79B000B514B /* AntiAntiDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 043CD3FF2621D79B000B514B /* AntiAntiDebug.m */; };
+		043CD4032621D79B000B514B /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 043CD4022621D79B000B514B /* fishhook.c */; };
+		043CD4052621D79B000B514B /* fishhook.h in Headers */ = {isa = PBXBuildFile; fileRef = 043CD4042621D79B000B514B /* fishhook.h */; };
+		043CD4072621D79B000B514B /* PlayTheAppDylib.h in Headers */ = {isa = PBXBuildFile; fileRef = 043CD4062621D79B000B514B /* PlayTheAppDylib.h */; };
+		043CD4092621D79B000B514B /* PlayTheAppDylib.m in Sources */ = {isa = PBXBuildFile; fileRef = 043CD4082621D79B000B514B /* PlayTheAppDylib.m */; };
+		04A752712636A89B009F17D2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A752702636A89A009F17D2 /* WebKit.framework */; };
+		29383C92F7BA70A125EA45E3 /* libPods-PlayTheApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A84B0366174DA859C468C1C /* libPods-PlayTheApp.a */; };
+		F92D7476D4476A1B6C4C2C3A /* libPods-PlayTheAppDylib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E5B31E4B53049DE98BB4FE4 /* libPods-PlayTheAppDylib.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		043CD3C42621D79B000B514B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 043CD3A62621D79B000B514B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 043CD3C12621D79B000B514B;
+			remoteInfo = PlayTheAppDylib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		043CD3AE2621D79B000B514B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				043CD3C32621D79B000B514B /* libPlayTheAppDylib.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		043CD3B12621D79B000B514B /* PlayTheApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayTheApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		043CD3B42621D79B000B514B /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		043CD3B62621D79B000B514B /* quick-resign.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "quick-resign.sh"; sourceTree = "<group>"; };
+		043CD3B82621D79B000B514B /* MDConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MDConfig.plist; sourceTree = "<group>"; };
+		043CD3BB2621D79B000B514B /* put ipa or app here */ = {isa = PBXFileReference; lastKnownFileType = text; path = "put ipa or app here"; sourceTree = "<group>"; };
+		043CD3BC2621D79B000B514B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		043CD3C22621D79B000B514B /* libPlayTheAppDylib.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libPlayTheAppDylib.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		043CD3C72621D79B000B514B /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		043CD3C92621D79B000B514B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		043CD3CB2621D79B000B514B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		043CD3CF2621D79B000B514B /* PlayTheAppDylib.xm */ = {isa = PBXFileReference; lastKnownFileType = text; path = PlayTheAppDylib.xm; sourceTree = "<group>"; };
+		043CD3D02621D79B000B514B /* PlayTheAppDylib.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PlayTheAppDylib.mm; sourceTree = "<group>"; };
+		043CD3D32621D79B000B514B /* MDConfigManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDConfigManager.h; sourceTree = "<group>"; };
+		043CD3D52621D79B000B514B /* MDConfigManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDConfigManager.m; sourceTree = "<group>"; };
+		043CD3D72621D79B000B514B /* MDCycriptManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDCycriptManager.h; sourceTree = "<group>"; };
+		043CD3D92621D79B000B514B /* MDCycriptManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDCycriptManager.m; sourceTree = "<group>"; };
+		043CD3DB2621D79B000B514B /* MDMethodTrace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDMethodTrace.h; sourceTree = "<group>"; };
+		043CD3DD2621D79B000B514B /* MDMethodTrace.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDMethodTrace.m; sourceTree = "<group>"; };
+		043CD3E02621D79B000B514B /* a1a2-selectortramps-arm.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = "a1a2-selectortramps-arm.s"; sourceTree = "<group>"; };
+		043CD3E22621D79B000B514B /* a1a2-selectortramps-arm64.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = "a1a2-selectortramps-arm64.s"; sourceTree = "<group>"; };
+		043CD3E42621D79B000B514B /* a1a2-selectortramps-i386.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = "a1a2-selectortramps-i386.s"; sourceTree = "<group>"; };
+		043CD3E62621D79B000B514B /* a1a2-selectortramps-x86_64.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = "a1a2-selectortramps-x86_64.s"; sourceTree = "<group>"; };
+		043CD3E82621D79B000B514B /* a2a3-selectortramps-arm.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = "a2a3-selectortramps-arm.s"; sourceTree = "<group>"; };
+		043CD3EA2621D79B000B514B /* a2a3-selectortramps-i386.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = "a2a3-selectortramps-i386.s"; sourceTree = "<group>"; };
+		043CD3EC2621D79B000B514B /* a2a3-selectortramps-x86_64.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = "a2a3-selectortramps-x86_64.s"; sourceTree = "<group>"; };
+		043CD3EE2621D79B000B514B /* OCMethodTrace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMethodTrace.h; sourceTree = "<group>"; };
+		043CD3F02621D79B000B514B /* OCMethodTrace.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCMethodTrace.m; sourceTree = "<group>"; };
+		043CD3F22621D79B000B514B /* OCSelectorTrampolines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCSelectorTrampolines.h; sourceTree = "<group>"; };
+		043CD3F42621D79B000B514B /* OCSelectorTrampolines.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OCSelectorTrampolines.mm; sourceTree = "<group>"; };
+		043CD3F62621D79B000B514B /* selectortramps.mac */ = {isa = PBXFileReference; lastKnownFileType = text; path = selectortramps.mac; sourceTree = "<group>"; };
+		043CD3F82621D79B000B514B /* LLDBTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLDBTools.h; sourceTree = "<group>"; };
+		043CD3FA2621D79B000B514B /* LLDBTools.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = LLDBTools.mm; sourceTree = "<group>"; };
+		043CD3FD2621D79B000B514B /* PlayTheAppDylib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PlayTheAppDylib-Prefix.pch"; path = "../PlayTheAppDylib-Prefix.pch"; sourceTree = "<group>"; };
+		043CD3FF2621D79B000B514B /* AntiAntiDebug.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AntiAntiDebug.m; sourceTree = "<group>"; };
+		043CD4022621D79B000B514B /* fishhook.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = "<group>"; };
+		043CD4042621D79B000B514B /* fishhook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
+		043CD4062621D79B000B514B /* PlayTheAppDylib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayTheAppDylib.h; sourceTree = "<group>"; };
+		043CD4082621D79B000B514B /* PlayTheAppDylib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayTheAppDylib.m; sourceTree = "<group>"; };
+		04A752702636A89A009F17D2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/System/iOSSupport/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
+		04A752732636A8C1009F17D2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		04BA1E2226D755BA006BC465 /* PlayTheApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PlayTheApp.entitlements; sourceTree = "<group>"; };
+		324A768E498A25400010BA59 /* Pods-PlayTheAppDylib.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayTheAppDylib.debug.xcconfig"; path = "Target Support Files/Pods-PlayTheAppDylib/Pods-PlayTheAppDylib.debug.xcconfig"; sourceTree = "<group>"; };
+		6F642D30C2844B74ECBC3E0E /* Pods-PlayTheApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayTheApp.release.xcconfig"; path = "Target Support Files/Pods-PlayTheApp/Pods-PlayTheApp.release.xcconfig"; sourceTree = "<group>"; };
+		8F52106C11612F90B36C888E /* Pods-PlayTheApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayTheApp.debug.xcconfig"; path = "Target Support Files/Pods-PlayTheApp/Pods-PlayTheApp.debug.xcconfig"; sourceTree = "<group>"; };
+		9A84B0366174DA859C468C1C /* libPods-PlayTheApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlayTheApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E5B31E4B53049DE98BB4FE4 /* libPods-PlayTheAppDylib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlayTheAppDylib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3C4CCE4DCE9FA8FCCA62F67 /* Pods-PlayTheAppDylib.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayTheAppDylib.release.xcconfig"; path = "Target Support Files/Pods-PlayTheAppDylib/Pods-PlayTheAppDylib.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		043CD3AB2621D79B000B514B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29383C92F7BA70A125EA45E3 /* libPods-PlayTheApp.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		043CD3BF2621D79B000B514B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04A752712636A89B009F17D2 /* WebKit.framework in Frameworks */,
+				043CD3C82621D79B000B514B /* JavaScriptCore.framework in Frameworks */,
+				043CD3CC2621D79B000B514B /* UIKit.framework in Frameworks */,
+				043CD3CA2621D79B000B514B /* Foundation.framework in Frameworks */,
+				F92D7476D4476A1B6C4C2C3A /* libPods-PlayTheAppDylib.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		043CD3A52621D79B000B514B = {
+			isa = PBXGroup;
+			children = (
+				043CD3B32621D79B000B514B /* PlayTheApp */,
+				043CD3CD2621D79B000B514B /* PlayTheAppDylib */,
+				043CD3C62621D79B000B514B /* Frameworks */,
+				043CD3B22621D79B000B514B /* Products */,
+				D53639D4AF9AACD07641CCD9 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		043CD3B22621D79B000B514B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				043CD3B12621D79B000B514B /* PlayTheApp.app */,
+				043CD3C22621D79B000B514B /* libPlayTheAppDylib.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		043CD3B32621D79B000B514B /* PlayTheApp */ = {
+			isa = PBXGroup;
+			children = (
+				04BA1E2226D755BA006BC465 /* PlayTheApp.entitlements */,
+				043CD3B42621D79B000B514B /* icon.png */,
+				043CD3BC2621D79B000B514B /* Info.plist */,
+				043CD3B52621D79B000B514B /* Scripts */,
+				043CD3B72621D79B000B514B /* Config */,
+				043CD3BA2621D79B000B514B /* TargetApp */,
+			);
+			path = PlayTheApp;
+			sourceTree = "<group>";
+		};
+		043CD3B52621D79B000B514B /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				043CD3B62621D79B000B514B /* quick-resign.sh */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		043CD3B72621D79B000B514B /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				043CD3B82621D79B000B514B /* MDConfig.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		043CD3BA2621D79B000B514B /* TargetApp */ = {
+			isa = PBXGroup;
+			children = (
+				043CD3BB2621D79B000B514B /* put ipa or app here */,
+			);
+			path = TargetApp;
+			sourceTree = "<group>";
+		};
+		043CD3C62621D79B000B514B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04A752702636A89A009F17D2 /* WebKit.framework */,
+				04A752732636A8C1009F17D2 /* WebKit.framework */,
+				043CD3C72621D79B000B514B /* JavaScriptCore.framework */,
+				043CD3C92621D79B000B514B /* Foundation.framework */,
+				043CD3CB2621D79B000B514B /* UIKit.framework */,
+				9A84B0366174DA859C468C1C /* libPods-PlayTheApp.a */,
+				9E5B31E4B53049DE98BB4FE4 /* libPods-PlayTheAppDylib.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		043CD3CD2621D79B000B514B /* PlayTheAppDylib */ = {
+			isa = PBXGroup;
+			children = (
+				043CD4062621D79B000B514B /* PlayTheAppDylib.h */,
+				043CD4082621D79B000B514B /* PlayTheAppDylib.m */,
+				043CD3CE2621D79B000B514B /* Logos */,
+				043CD3D22621D79B000B514B /* Config */,
+				043CD3DF2621D79B000B514B /* Trace */,
+				043CD3F72621D79B000B514B /* Tools */,
+				043CD3FE2621D79B000B514B /* AntiAntiDebug */,
+				043CD4012621D79B000B514B /* fishhook */,
+				043CD3FC2621D79B000B514B /* Supporting Files */,
+			);
+			path = PlayTheAppDylib;
+			sourceTree = "<group>";
+		};
+		043CD3CE2621D79B000B514B /* Logos */ = {
+			isa = PBXGroup;
+			children = (
+				043CD3CF2621D79B000B514B /* PlayTheAppDylib.xm */,
+				043CD3D02621D79B000B514B /* PlayTheAppDylib.mm */,
+			);
+			path = Logos;
+			sourceTree = "<group>";
+		};
+		043CD3D22621D79B000B514B /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				043CD3D32621D79B000B514B /* MDConfigManager.h */,
+				043CD3D52621D79B000B514B /* MDConfigManager.m */,
+				043CD3D72621D79B000B514B /* MDCycriptManager.h */,
+				043CD3D92621D79B000B514B /* MDCycriptManager.m */,
+				043CD3DB2621D79B000B514B /* MDMethodTrace.h */,
+				043CD3DD2621D79B000B514B /* MDMethodTrace.m */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		043CD3DF2621D79B000B514B /* Trace */ = {
+			isa = PBXGroup;
+			children = (
+				043CD3E02621D79B000B514B /* a1a2-selectortramps-arm.s */,
+				043CD3E22621D79B000B514B /* a1a2-selectortramps-arm64.s */,
+				043CD3E42621D79B000B514B /* a1a2-selectortramps-i386.s */,
+				043CD3E62621D79B000B514B /* a1a2-selectortramps-x86_64.s */,
+				043CD3E82621D79B000B514B /* a2a3-selectortramps-arm.s */,
+				043CD3EA2621D79B000B514B /* a2a3-selectortramps-i386.s */,
+				043CD3EC2621D79B000B514B /* a2a3-selectortramps-x86_64.s */,
+				043CD3EE2621D79B000B514B /* OCMethodTrace.h */,
+				043CD3F02621D79B000B514B /* OCMethodTrace.m */,
+				043CD3F22621D79B000B514B /* OCSelectorTrampolines.h */,
+				043CD3F42621D79B000B514B /* OCSelectorTrampolines.mm */,
+				043CD3F62621D79B000B514B /* selectortramps.mac */,
+			);
+			path = Trace;
+			sourceTree = "<group>";
+		};
+		043CD3F72621D79B000B514B /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				043CD3F82621D79B000B514B /* LLDBTools.h */,
+				043CD3FA2621D79B000B514B /* LLDBTools.mm */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		043CD3FC2621D79B000B514B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				043CD3FD2621D79B000B514B /* PlayTheAppDylib-Prefix.pch */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		043CD3FE2621D79B000B514B /* AntiAntiDebug */ = {
+			isa = PBXGroup;
+			children = (
+				043CD3FF2621D79B000B514B /* AntiAntiDebug.m */,
+			);
+			path = AntiAntiDebug;
+			sourceTree = "<group>";
+		};
+		043CD4012621D79B000B514B /* fishhook */ = {
+			isa = PBXGroup;
+			children = (
+				043CD4022621D79B000B514B /* fishhook.c */,
+				043CD4042621D79B000B514B /* fishhook.h */,
+			);
+			path = fishhook;
+			sourceTree = "<group>";
+		};
+		D53639D4AF9AACD07641CCD9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F52106C11612F90B36C888E /* Pods-PlayTheApp.debug.xcconfig */,
+				6F642D30C2844B74ECBC3E0E /* Pods-PlayTheApp.release.xcconfig */,
+				324A768E498A25400010BA59 /* Pods-PlayTheAppDylib.debug.xcconfig */,
+				E3C4CCE4DCE9FA8FCCA62F67 /* Pods-PlayTheAppDylib.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		043CD3C02621D79B000B514B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				043CD3D82621D79B000B514B /* MDCycriptManager.h in Headers */,
+				043CD3DC2621D79B000B514B /* MDMethodTrace.h in Headers */,
+				043CD4052621D79B000B514B /* fishhook.h in Headers */,
+				043CD4072621D79B000B514B /* PlayTheAppDylib.h in Headers */,
+				043CD3F92621D79B000B514B /* LLDBTools.h in Headers */,
+				043CD3D42621D79B000B514B /* MDConfigManager.h in Headers */,
+				043CD3F32621D79B000B514B /* OCSelectorTrampolines.h in Headers */,
+				043CD3EF2621D79B000B514B /* OCMethodTrace.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		043CD3B02621D79B000B514B /* PlayTheApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 043CD40F2621D79B000B514B /* Build configuration list for PBXNativeTarget "PlayTheApp" */;
+			buildPhases = (
+				7959BCB60A33991A5EEF0B61 /* [CP] Check Pods Manifest.lock */,
+				043CD3AA2621D79B000B514B /* Sources */,
+				043CD3AB2621D79B000B514B /* Frameworks */,
+				043CD3AC2621D79B000B514B /* ShellScript */,
+				043CD3AD2621D79B000B514B /* Resources */,
+				043CD3AE2621D79B000B514B /* CopyFiles */,
+				043CD3AF2621D79B000B514B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				043CD3C52621D79B000B514B /* PBXTargetDependency */,
+			);
+			name = PlayTheApp;
+			productName = PlayTheApp;
+			productReference = 043CD3B12621D79B000B514B /* PlayTheApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		043CD3C12621D79B000B514B /* PlayTheAppDylib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 043CD40C2621D79B000B514B /* Build configuration list for PBXNativeTarget "PlayTheAppDylib" */;
+			buildPhases = (
+				6923296316D2C61B2402735C /* [CP] Check Pods Manifest.lock */,
+				043CD3BD2621D79B000B514B /* ShellScript */,
+				043CD3BE2621D79B000B514B /* Sources */,
+				043CD3BF2621D79B000B514B /* Frameworks */,
+				043CD3C02621D79B000B514B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlayTheAppDylib;
+			productName = PlayTheAppDylib;
+			productReference = 043CD3C22621D79B000B514B /* libPlayTheAppDylib.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		043CD3A62621D79B000B514B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					043CD3B02621D79B000B514B = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					043CD3C12621D79B000B514B = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = 043CD3A92621D79B000B514B /* Build configuration list for PBXProject "PlayTheApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 043CD3A52621D79B000B514B;
+			productRefGroup = 043CD3B22621D79B000B514B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				043CD3B02621D79B000B514B /* PlayTheApp */,
+				043CD3C12621D79B000B514B /* PlayTheAppDylib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		043CD3AD2621D79B000B514B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				043CD3B92621D79B000B514B /* MDConfig.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		043CD3AC2621D79B000B514B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = /opt/MonkeyDev/Tools/pack.sh;
+		};
+		043CD3AF2621D79B000B514B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/MonkeyDev/Tools/pack.sh codesign";
+		};
+		043CD3BD2621D79B000B514B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/MonkeyDev/bin/md --xcbp-logos";
+		};
+		6923296316D2C61B2402735C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlayTheAppDylib-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7959BCB60A33991A5EEF0B61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlayTheApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		043CD3AA2621D79B000B514B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		043CD3BE2621D79B000B514B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				043CD3DA2621D79B000B514B /* MDCycriptManager.m in Sources */,
+				043CD3E32621D79B000B514B /* a1a2-selectortramps-arm64.s in Sources */,
+				043CD3E12621D79B000B514B /* a1a2-selectortramps-arm.s in Sources */,
+				043CD3E72621D79B000B514B /* a1a2-selectortramps-x86_64.s in Sources */,
+				043CD3F12621D79B000B514B /* OCMethodTrace.m in Sources */,
+				043CD3D62621D79B000B514B /* MDConfigManager.m in Sources */,
+				043CD4032621D79B000B514B /* fishhook.c in Sources */,
+				043CD4002621D79B000B514B /* AntiAntiDebug.m in Sources */,
+				043CD3F52621D79B000B514B /* OCSelectorTrampolines.mm in Sources */,
+				043CD3E52621D79B000B514B /* a1a2-selectortramps-i386.s in Sources */,
+				043CD3EB2621D79B000B514B /* a2a3-selectortramps-i386.s in Sources */,
+				043CD3E92621D79B000B514B /* a2a3-selectortramps-arm.s in Sources */,
+				043CD4092621D79B000B514B /* PlayTheAppDylib.m in Sources */,
+				043CD3D12621D79B000B514B /* PlayTheAppDylib.mm in Sources */,
+				043CD3FB2621D79B000B514B /* LLDBTools.mm in Sources */,
+				043CD3ED2621D79B000B514B /* a2a3-selectortramps-x86_64.s in Sources */,
+				043CD3DE2621D79B000B514B /* MDMethodTrace.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		043CD3C52621D79B000B514B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 043CD3C12621D79B000B514B /* PlayTheAppDylib */;
+			targetProxy = 043CD3C42621D79B000B514B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		043CD40A2621D79B000B514B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		043CD40B2621D79B000B514B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		043CD40D2621D79B000B514B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 324A768E498A25400010BA59 /* Pods-PlayTheAppDylib.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/Frameworks/**",
+					"$(MonkeyDevPath)/Librarys/**",
+					"$(MonkeyDevTheosPath)/vendor/lib",
+					"$(PROJECT_DIR)/PlayTheAppDylib",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PlayTheAppDylib/PlayTheAppDylib-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/include",
+					"$(MonkeyDevTheosPath)/vendor/include/**",
+				);
+				INSTALL_PATH = "@executable_path/Frameworks/libPlayTheAppDylib.dylib";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/Frameworks",
+					"$(MonkeyDevTheosPath)/vendor/lib/**",
+				);
+				MonkeyDevPath = /opt/MonkeyDev;
+				MonkeyDevTheosPath = /opt/theos;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DTHEOS_INSTANCE_NAME=\"\\\"PlayTheAppDylib\\\"\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-weak_library",
+					"/usr/lib/libc++.dylib",
+					"-weak_library",
+					"/usr/lib/libstdc++.dylib",
+					"-weak_library",
+					"$(MonkeyDevPath)/Frameworks/libsubstrate.dylib",
+					"-lcycript",
+					"-framework",
+					RevealServer,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+		043CD40E2621D79B000B514B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3C4CCE4DCE9FA8FCCA62F67 /* Pods-PlayTheAppDylib.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/Frameworks/**",
+					"$(MonkeyDevPath)/Librarys/**",
+					"$(MonkeyDevTheosPath)/vendor/lib",
+					"$(PROJECT_DIR)/PlayTheAppDylib",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PlayTheAppDylib/PlayTheAppDylib-Prefix.pch";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/include",
+					"$(MonkeyDevTheosPath)/vendor/include/**",
+				);
+				INSTALL_PATH = "@executable_path/Frameworks/libPlayTheAppDylib.dylib";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(MonkeyDevPath)/Frameworks",
+					"$(MonkeyDevTheosPath)/vendor/lib/**",
+				);
+				MonkeyDevPath = /opt/MonkeyDev;
+				MonkeyDevTheosPath = /opt/theos;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-DTHEOS_INSTANCE_NAME=\"\\\"PlayTheAppDylib\\\"\"",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-weak_library",
+					"/usr/lib/libc++.dylib",
+					"-weak_library",
+					"/usr/lib/libstdc++.dylib",
+					"-weak_library",
+					"$(MonkeyDevPath)/Frameworks/libsubstrate.dylib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		043CD4102621D79B000B514B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F52106C11612F90B36C888E /* Pods-PlayTheApp.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PlayTheApp/PlayTheApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SXBU677CPT;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = PlayTheApp/Info.plist;
+				MONKEYDEV_ADD_SUBSTRATE = YES;
+				MONKEYDEV_CLASS_DUMP = NO;
+				MONKEYDEV_DEFAULT_BUNDLEID = NO;
+				MONKEYDEV_INSERT_DYLIB = YES;
+				MONKEYDEV_RESTORE_SYMBOL = NO;
+				MONKEYDEV_TARGET_APP = Optional;
+				PODS_CONFIGURATION_BUILD_DIR = "$BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				PODS_ROOT = "${SRCROOT}/Pods";
+				PRODUCT_BUNDLE_IDENTIFIER = com.growingio.playtheapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		043CD4112621D79B000B514B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F642D30C2844B74ECBC3E0E /* Pods-PlayTheApp.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PlayTheApp/PlayTheApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SXBU677CPT;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = PlayTheApp/Info.plist;
+				MONKEYDEV_ADD_SUBSTRATE = YES;
+				MONKEYDEV_CLASS_DUMP = NO;
+				MONKEYDEV_DEFAULT_BUNDLEID = NO;
+				MONKEYDEV_INSERT_DYLIB = YES;
+				MONKEYDEV_RESTORE_SYMBOL = NO;
+				MONKEYDEV_TARGET_APP = Optional;
+				PODS_CONFIGURATION_BUILD_DIR = "$BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				PODS_ROOT = "${SRCROOT}/Pods";
+				PRODUCT_BUNDLE_IDENTIFIER = com.growingio.playtheapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		043CD3A92621D79B000B514B /* Build configuration list for PBXProject "PlayTheApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				043CD40A2621D79B000B514B /* Debug */,
+				043CD40B2621D79B000B514B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		043CD40C2621D79B000B514B /* Build configuration list for PBXNativeTarget "PlayTheAppDylib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				043CD40D2621D79B000B514B /* Debug */,
+				043CD40E2621D79B000B514B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		043CD40F2621D79B000B514B /* Build configuration list for PBXNativeTarget "PlayTheApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				043CD4102621D79B000B514B /* Debug */,
+				043CD4112621D79B000B514B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 043CD3A62621D79B000B514B /* Project object */;
+}
